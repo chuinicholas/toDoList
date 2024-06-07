@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  background-color: #e2c2b3;
+}
+
+h1 {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-size: 5rem;
+  color: #f7f3f5;
+}
+
+h2 {
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #f7f3f5;
+}
+
+#gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  height: 80vh;
+}
+
+#userInput {
+  background-color: #687477;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#waterCount {
+  background-color: #f3f7ec;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-radius: 20px;
+  gap: 10px;
+  padding: 30px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#checklist {
+  background-color: #403234;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+  overflow: scroll;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+label {
+  /* font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal; */
+
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 2rem;
+  color: #e2c2b3;
+}
+
+input,
+select {
+  height: 30px;
+  width: 200px;
+  margin: 30px;
+}
+
+button {
+  width: 80px;
+  height: 35px;
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+img {
+  object-fit: cover;
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  filter: grayscale(100%);
+  transition: filter 2s;
+}
+
+img:hover {
+  filter: grayscale(50%);
+}
+
+button:hover {
+  background-color: #687477;
+}
+
+#drinkWater {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  text-align: center;
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+}
+
+.checklistItems {
+  background-color: #f3f7ec;
+  width: 80%;
+  height: 10%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#task,
+#priority {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  :focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+  }
+}
+
+.checklistItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.do {
+  width: 65%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.important {
+  width: 25%;
+  height: 60%;
+  background-color: #538392;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  width: 10%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.do,
+.important,
+.check {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.doneBtn {
+  margin: 0;
+}
+
+.doText {
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.importantText {
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.8rem;
+  color: aliceblue;
+}
+
+.waters {
+  position: relative;
+  left: 8px;
+  top: 8px;
+}
+
+#task {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #fff;
+  background-color: #1d3124;
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: 0.4s;
+  opacity: 0.5;
+}
+
+#task:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+#task:focus {
+  box-shadow: 0 0 0 0.15vw skyblue;
+}
+
+#priority {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #f6f4e8;
+  background-color: #1d3124;
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: 0.4s;
+  opacity: 0.5;
+}
+
+#priority:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+#priority:focus {
+  box-shadow: 0 0 0 0.15vw skyblue;
+}
+
+::placeholder {
+  color: #f6f4e8;
+}
+
+@media only screen and (max-width: 600px) {
+  #gridContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 10px;
+  }
+
+  #userInput {
+    height: 200px;
+  }
+
+  #waterCount {
+    order: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2,
+  #taskDiv,
+  #priorityDiv {
+    font-size: 1.5rem;
+    height: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #task,
+  #priority {
+    border-radius: 8px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  #drinkWater > p {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+
+  .importantText {
+    font-size: 0.7rem;
+  }
+
+  .doText {
+    font-size: 0.6rem;
+  }
+
+  button {
+    width: 100px;
+    height: 40px;
+    font-family: "Delicious Handrawn", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.7rem;
+    border-radius: 5px;
+  }
+
+  .add-btn {
+    margin-top: 50px;
+  }
+
+  #motivation {
+    margin-top: 20px;
+  }
+
+  #checklist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    gap: 0;
+  }
+
+  .doneBtn {
+    height: 20px;
+    margin: 0;
+  }
+
+  #waterCount {
+    gap: 0;
+    padding: 10px;
+  }
+
+  #drinkWater {
+    margin-top: 10px;
+  }
+}
