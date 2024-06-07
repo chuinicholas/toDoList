@@ -311,7 +311,7 @@ button:hover {
   #gridContainer {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     gap: 10px;
   }
 
